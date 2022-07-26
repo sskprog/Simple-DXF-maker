@@ -7,5 +7,5 @@ function AutoLoader($classname)
     if (file_exists($file)) {
         require_once $file;
     }
-    spl_autoload_register('AutoLoader');
 }
+spl_autoload_register('AutoLoader');

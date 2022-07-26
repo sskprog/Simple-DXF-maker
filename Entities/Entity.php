@@ -1,12 +1,12 @@
 <?php
-namespace DXFMaker\Entities;
+namespace Entities;
 
 abstract class Entity
 {
     protected $common = [
         'layer' => 0,
-        'line' => '',
-        'color' => '',
+        'line' => null,
+        'color' => null,
     ];
     protected $data;
 
@@ -27,10 +27,10 @@ abstract class Entity
     public function getOptionalProperties()
     {
         $optional = '';
-        if ($this->common['line']) {
+        if (isset($this->common['line'])) {
             $optional .= '6' . PHP_EOL . $this->common['line'] . PHP_EOL;
         }
-        if ($this->common['color']) {
+        if (isset($this->common['color'])) {
             $optional .= '62' . PHP_EOL . sprintf('%d', $this->common['color']) . PHP_EOL;
         }
         return $optional;

@@ -14,7 +14,7 @@ class Solid extends Entity
         '10' . PHP_EOL . '%.2f' . PHP_EOL . '20' . PHP_EOL . '%.2f' . PHP_EOL .
         '11' . PHP_EOL . '%.2f' . PHP_EOL . '21' . PHP_EOL . '%.2f' . PHP_EOL .
         '12' . PHP_EOL . '%.2f' . PHP_EOL . '22' . PHP_EOL . '%.2f' . PHP_EOL;
-        if (isset($this->data['points'[3]])) {
+        if (isset($this->data['points'][3])) {
             $str .= '13' . PHP_EOL . '%.2f' . PHP_EOL . '23' . PHP_EOL . '%.2f' . PHP_EOL;
         }
 

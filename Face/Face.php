@@ -4,7 +4,7 @@ namespace Face;
 abstract class Face
 {
     protected $common = [
-        'name' => null,
+        'name' => 'test',
         'flag' => 64
     ];
     protected $data;

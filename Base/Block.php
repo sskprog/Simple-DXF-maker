@@ -3,8 +3,6 @@ namespace Base;
 
 use Entities\Entity;
 
-require_once 'Insert.php';
-
 class Block extends Entity
 {
     use Insert;

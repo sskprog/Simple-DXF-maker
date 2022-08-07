@@ -3,8 +3,11 @@ namespace Base;
 
 use Entities\Entity;
 
+require_once 'Insert.php';
+
 class Block extends Entity
 {
+    use Insert;
     protected $data = [
         'name' => 'test',
         'type' => 0,
@@ -29,11 +32,6 @@ class Block extends Entity
     public function getName()
     {
         return $this->data['name'];
-    }
-
-    public function insertEntity(Entity $entity)
-    {
-        $this->entities .= sprintf('%s', $entity);
     }
 
     public function __toString()

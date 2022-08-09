@@ -7,6 +7,8 @@ use Face\Style;
 
 class Draw
 {
+    use Insert;
+
     protected $header;
     protected $ltype;
     protected $countLtype = 0;
@@ -15,6 +17,7 @@ class Draw
     protected $style;
     protected $countStyle = 0;
     protected $block;
+    protected $entities;
 
     protected $headTable = '0' . PHP_EOL . 'TABLE' . PHP_EOL . '2' . PHP_EOL;
     protected $endTable = '0' . PHP_EOL . 'ENDTAB' . PHP_EOL;
@@ -75,7 +78,11 @@ class Draw
                 $this->endSection .
                 $this->headSection .
                 'BLOCKS' . PHP_EOL . $this->block .
-                $this->endSection;
+                $this->endSection .
+                $this->headSection .
+                'ENTITIES' . PHP_EOL . $this->entities .
+                $this->endSection .
+                '0' . PHP_EOL . 'EOF' . PHP_EOL;
 
         return $str;
     }

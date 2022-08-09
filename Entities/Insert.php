@@ -1,20 +1,29 @@
 <?php
 namespace Entities;
 
+use Base\Block;
+
 class Insert extends Entity
 {
     protected $data = [
-        'block' => null,
         'point' => [0, 0],
         'scale' => [1, 1],
         'rotation' => 0,
         'column' => [1, 0],
         'row' => [1, 0]
     ];
+    protected $block;
+
+    public function __construct(array $properties, Block $block)
+    {
+        parent::__construct($properties);
+        $this->block = $block->getName();
+    }
 
     public function __toString()
     {
-        $str = '0' . PHP_EOL . 'INSERT' . PHP_EOL . '8' . PHP_EOL . '%s' . PHP_EOL .
+        $str =
+                '0' . PHP_EOL . 'INSERT' . PHP_EOL . '8' . PHP_EOL . '%s' . PHP_EOL .
                 '2' . PHP_EOL . '%s' . PHP_EOL . '10' . PHP_EOL . '%.2f' . PHP_EOL .
                 '20' . PHP_EOL . '%.2f' . PHP_EOL . '41' . PHP_EOL . '%.2f' . PHP_EOL .
                 '42' . PHP_EOL . '%.2f' . PHP_EOL . '50' . PHP_EOL . '%.2f' . PHP_EOL .
@@ -24,7 +33,7 @@ class Insert extends Entity
         return sprintf(
             $str,
             $this->common['layer'],
-            $this->data['block'],
+            $this->block,
             $this->data['point'][0],
             $this->data['point'][1],
             $this->data['scale'][0],

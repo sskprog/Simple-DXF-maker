@@ -1,23 +1,24 @@
 <?php
 namespace Base;
 
+use Entities\Insert;
 use Face\Layer;
 use Face\Ltype;
 use Face\Style;
 
 class Draw
 {
-    use Insert;
+    use Insertion;
 
     protected $header;
-    protected $ltype;
+    protected $ltype = '';
     protected $countLtype = 0;
-    protected $layer;
+    protected $layer = '';
     protected $countLayer = 0;
     protected $style;
     protected $countStyle = 0;
-    protected $block;
-    protected $entities;
+    protected $block = '';
+    protected $entities = '';
 
     protected $headTable = '0' . PHP_EOL . 'TABLE' . PHP_EOL . '2' . PHP_EOL;
     protected $endTable = '0' . PHP_EOL . 'ENDTAB' . PHP_EOL;
@@ -50,6 +51,12 @@ class Draw
     public function addBlock(Block $block)
     {
         $this->block .= sprintf('%s', $block);
+    }
+
+    public function insertBlock(array $properties, Block $block)
+    {
+        $insert = new Insert($properties, $block);
+        $this->entities .= sprintf('%s', $insert);
     }
 
     public function __toString()

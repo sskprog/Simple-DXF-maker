@@ -14,11 +14,6 @@ class Block extends Entity
     ];
     protected $entities = null;
 
-    // public function __construct(array $properties)
-    // {
-    //     $this->construct($properties);
-    // }
-
     public function getName()
     {
         return $this->data['name'];

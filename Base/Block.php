@@ -5,7 +5,7 @@ use Entities\Entity;
 
 class Block extends Entity
 {
-    use Insert;
+    use Insertion;
     use Constructor;
     protected $data = [
         'name' => 'test',

@@ -59,6 +59,18 @@ class Draw
         $this->entities .= sprintf('%s', $insert);
     }
 
+    public function save($name, $charset = 'UTF-8')
+    {
+        $handle = fopen($name . '.dxf', 'w');
+
+        if ($charset === 'UTF-8') {
+            fwrite($handle, sprintf('%s', $this));
+        } else {
+            fwrite($handle, iconv('UTF-8', $charset, sprintf('%s', $this)));
+        }
+        fclose($handle);
+    }
+
     public function __toString()
     {
         $str =

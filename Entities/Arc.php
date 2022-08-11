@@ -1,22 +1,20 @@
 <?php
-
 namespace Entities;
 
-class Arc extends Entity {
-
+class Arc extends Entity
+{
     protected $data = [
-        'point' => [0,0],
+        'point' => [0, 0],
         'r' => 1,
-        'start' => 0,
-        'end' => 180
+        'angle' => [0, 180]
     ];
 
-    function __toString()
+    public function __toString()
     {
-        $str = '0'.PHP_EOL. 'ARC'. PHP_EOL. '8'. PHP_EOL. '%s'.PHP_EOL.
-        $this->getOptionalProperties().
-        '10'.PHP_EOL. '%.2f'. PHP_EOL. '20'.PHP_EOL. '%.2f'.PHP_EOL.
-        '40'. PHP_EOL. '%.2f'.PHP_EOL. '50'. PHP_EOL. '%.2f'.PHP_EOL.
+        $str = '0' . PHP_EOL . 'ARC' . PHP_EOL . '8' . PHP_EOL . '%s' . PHP_EOL .
+        $this->getOptionalProperties() .
+        '10' . PHP_EOL . '%.2f' . PHP_EOL . '20' . PHP_EOL . '%.2f' . PHP_EOL .
+        '40' . PHP_EOL . '%.2f' . PHP_EOL . '50' . PHP_EOL . '%.2f' . PHP_EOL .
         '51' . PHP_EOL . '%.2f' . PHP_EOL;
 
         return sprintf(
@@ -25,8 +23,8 @@ class Arc extends Entity {
             $this->data['point'][0],
             $this->data['point'][1],
             $this->data['r'],
-            $this->data['start'],
-            $this->data['end']
+            $this->data['angle'][0],
+            $this->data['angle'][1]
         );
     }
 }

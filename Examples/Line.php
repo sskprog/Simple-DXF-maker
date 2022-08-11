@@ -15,10 +15,6 @@ $draw->insertEntity(new Line(['points' => [[7, '-9'], [12, 34]]]));
 //If you use negative values ​​enclose them in single quotes. For example '-10'
 //You can use common properties like 'layer', 'ltype' and 'style'. See related examples.
 
-echo '<pre>';
-
-echo $draw;
-
 //Finally save the drawing. Add filename without extension as parameter
 $draw->save('line');
 

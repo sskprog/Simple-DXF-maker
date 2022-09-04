@@ -17,7 +17,7 @@ $draw->insertEntity(new Solid(['points' => [[0, 5], [2, 10], [8, 6], [10, 12]]])
 $draw->insertEntity(new Solid(['points' => [[20, 5], [22, 10], [28, 6]]]));
 
 //If you use negative values ​​enclose them in single quotes. For example '-10'
-//You can use common properties like 'layer', 'ltype' and 'style'. See related examples.
+//You can use common properties like 'layer', 'ltype' and 'color'. See related examples.
 
 //Finally save the drawing. Add filename without extension as parameter
 $draw->save('solid');

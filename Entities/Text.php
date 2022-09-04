@@ -11,7 +11,7 @@ class Text extends Entity
         'width' => null,
         'angle' => null,
         'style' => null,
-        'flag' => null,
+        'mirror' => null,
         'justify' => []
     ];
 
@@ -43,8 +43,8 @@ class Text extends Entity
         if (isset($this->data['style'])) {
             $result .= sprintf('7' . PHP_EOL . '%s' . PHP_EOL, $this->data['style']);
         }
-        if (isset($this->data['flag'])) {
-            $result .= sprintf('71' . PHP_EOL . '%d' . PHP_EOL, $this->data['flag']);
+        if (isset($this->data['mirror'])) {
+            $result .= sprintf('71' . PHP_EOL . '%d' . PHP_EOL, $this->data['mirror']);
         }
         if (isset($this->data['justify'][0])) {
             $result .= sprintf(

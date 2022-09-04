@@ -15,7 +15,7 @@ $draw->insertEntity(new Arc(['point' => [5, 5], 'r' => 10, 'angle' => [270, 90]]
 //r - radius
 // angle[x,y] - start angle, end angle
 //If you use negative values ​​enclose them in single quotes. For example '-10'
-// You can use common properties like 'layer', 'ltype' and 'style'. See related examples.
+//You can use common properties like 'layer', 'ltype' and 'color'. See related examples.
 
 //Finally save the drawing. Add filename without extension as parameter
 $draw->save('arc');

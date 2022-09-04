@@ -14,7 +14,7 @@ abstract class Entity
     ];
     protected $data;
 
-    public function __construct(array $properties)
+    public function __construct(array $properties = [])
     {
         $this->construct($properties);
     }

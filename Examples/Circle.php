@@ -14,7 +14,7 @@ $draw->insertEntity(new Circle(['point' => [10, 10], 'r' => 10]));
 //point[x,y] - center
 //r - radius
 //If you use negative values ​​enclose them in single quotes. For example '-10'
-//You can use common properties like 'layer', 'ltype' and 'style'. See related examples.
+//You can use common properties like 'layer', 'ltype' and 'color'. See related examples.
 
 //Finally save the drawing. Add filename without extension as parameter
 $draw->save('circle');

@@ -9,7 +9,7 @@ abstract class Entity
 
     protected $common = [
         'layer' => 0,
-        'line' => null,
+        'ltype' => null,
         'color' => null,
     ];
     protected $data;
@@ -22,8 +22,8 @@ abstract class Entity
     public function getOptionalProperties()
     {
         $optional = '';
-        if (isset($this->common['line'])) {
-            $optional .= '6' . PHP_EOL . $this->common['line'] . PHP_EOL;
+        if (isset($this->common['ltype'])) {
+            $optional .= '6' . PHP_EOL . $this->common['ltype'] . PHP_EOL;
         }
         if (isset($this->common['color'])) {
             $optional .= '62' . PHP_EOL . sprintf('%d', $this->common['color']) . PHP_EOL;

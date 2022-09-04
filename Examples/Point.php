@@ -13,7 +13,7 @@ $draw->insertEntity(new Point(['point' => [7, '-9']]));
 //Where:
 //point[x,y] - center
 //If you use negative values ​​enclose them in single quotes. For example '-10'
-//You can use common properties like 'layer', 'ltype' and 'style'. See related examples.
+//You can use common properties like 'layer', 'ltype' and 'color'. See related examples.
 
 //Finally save the drawing. Add filename without extension as parameter
 $draw->save('point');

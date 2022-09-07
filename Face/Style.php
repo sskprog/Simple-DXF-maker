@@ -4,7 +4,7 @@ namespace Face;
 class Style extends Face
 {
     protected $data = [
-        'height' => 0,
+        'height' => 3,
         'width' => 1,
         'angle' => 0,
         'mirror' => 0,
@@ -12,6 +12,11 @@ class Style extends Face
         'font' => 'SIMPLEX.SHX',
         'bigfont' => null
     ];
+
+    public function getName()
+    {
+        return $this->common['name'];
+    }
 
     public function __toString()
     {

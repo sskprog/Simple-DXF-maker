@@ -18,6 +18,11 @@ class Style extends Face
         return $this->common['name'];
     }
 
+    public function getData()
+    {
+        return $this->data;
+    }
+
     public function __toString()
     {
         $str = '0' . PHP_EOL . 'STYLE' . PHP_EOL . '2' . PHP_EOL . '%s' . PHP_EOL .

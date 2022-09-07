@@ -1,6 +1,8 @@
 <?php
 namespace Entities;
 
+use Face\Style;
+
 class Text extends Entity
 {
     protected $data = [
@@ -14,6 +16,19 @@ class Text extends Entity
         'mirror' => null,
         'justify' => []
     ];
+
+    public function __construct(array $properties, Style $style = null)
+    {
+        parent::construct($properties);
+        if ($style) {
+            foreach ($style->getData() as $key => $value) {
+                if (array_key_exists($key, $this->data)) {
+                    $this->data[$key] = $value;
+                }
+            }
+            $this->data['style'] = $style->getName();
+        }
+    }
 
     public function __toString()
     {

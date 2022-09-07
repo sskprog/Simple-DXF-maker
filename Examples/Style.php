@@ -11,18 +11,19 @@ $draw = new Draw;
 //The parameters WIDTH, HEIGHT, ANGLE and MIRROR are similar to the parameters of the same name in the Entity Text.
 //See related example. You can create style with these options and specify this style when creating text. For example.
 
-$draw->addStyle(new Style(['height' => 7, 'angle' => 30, 'name' => 'style1']));
-$draw->insertEntity(new Text(['point' => [0, 50], 'txt' => 'text height 7 angle 30', 'style' => 'style1']));
+$style1 = new Style(['height' => 7, 'angle' => 30, 'name' => 'style1']);
+$draw->addStyle($style1);
+$draw->insertEntity(new Text(['point' => [0, 50], 'txt' => 'text height 7 angle 30'], $style1));
 
 //Default font is SIMPLEX.SHX. You can change it.
-$draw->addStyle(new Style(['height' => 5, 'font' => 'Arial.ttf', 'name' => 'Arial']));
-$draw->insertEntity(new Text(['point' => [0, 40], 'txt' => 'text Arial', 'style' => 'Arial']));
+$arial = new Style(['height' => 5, 'font' => 'Arial.ttf', 'name' => 'Arial']);
+$draw->addStyle($arial);
+$draw->insertEntity(new Text(['point' => [0, 40], 'txt' => 'text Arial'], $arial));
 
-$draw->addStyle(new Style(['height' => 5, 'flag' => 4, 'name' => 'Vertical']));
-$draw->insertEntity(new Text(['point' => [0, 30], 'txt' => 'text vertical', 'style' => 'Vertical']));
-
-echo '<pre>';
-echo $draw;
+//if you want to get a vertically oriented text, then set the value of the flag parameter to 4
+$vertical = new Style(['height' => 5, 'flag' => 4, 'name' => 'Vertical']);
+$draw->addStyle($vertical);
+$draw->insertEntity(new Text(['point' => [0, 30], 'txt' => 'text vertical'], $vertical));
 
 //Finally save the drawing. Add filename without extension as parameter
 $draw->save('style');

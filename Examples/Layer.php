@@ -36,9 +36,6 @@ $lockedLayer = new Layer(['color' => 2, 'name' => 'locked',  'flag' => 4]);
 $draw->addLayer($lockedLayer);
 $draw->insertEntity(new Line(['points' => [[0, '-10'], [80, '-10']], 'layer' => 'locked']));
 
-echo '<pre>';
-echo $draw;
-
 //Finally save the drawing. Add filename without extension as parameter
 $draw->save('layer');
 

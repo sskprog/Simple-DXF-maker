@@ -20,4 +20,4 @@ $draw->save('line');
 
 //Default charset is 'UTF-8'. If you want to use a different encoding then add
 //the second parameter to the method. For example:
-//$draw->save('line', 'Windows-1251);
+//$draw->save('line', 'Windows-1251');

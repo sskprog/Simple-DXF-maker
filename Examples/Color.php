@@ -10,7 +10,7 @@ use Entities\Text;
 $draw = new Draw;
 
 //You can set the color value in the range from 1 to 255. Default color value is 0 (BYLAYER).
-//If you want to get the color value BYBLOCK, set the value of the color parameter to 256.
+//If you want to get the color value BYBLOCK, set the value of the color parameter to 0.
 
 //Red line
 $draw->insertEntity(new Line(['points' => [[0, 40], [20, 40]], 'color' => 1]));

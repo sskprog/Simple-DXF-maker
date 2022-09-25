@@ -20,9 +20,9 @@ $draw = new Draw;
 //zero - dot.
 
 //Examples:
-//Continious line
-$continious = new Ltype(['name' => 'Continious', 'desc' => 'Solid line']);
-$draw->addLtype($continious);
+//Continuous line
+$continuous = new Ltype(['name' => 'Continuous', 'desc' => 'Solid line']);
+$draw->addLtype($continuous);
 
 //Dashed line
 $dashed = new Ltype(['name' => 'Dashed', 'desc' => 'Dashed line', 'length' => 15, 'dash' => [12, '-3']]);

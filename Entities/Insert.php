@@ -13,11 +13,13 @@ class Insert extends Entity
         'row' => [1, 0]
     ];
     protected $block;
+    protected $layer;
 
     public function __construct(array $properties, Block $block)
     {
         parent::__construct($properties);
         $this->block = $block->getName();
+        $this->layer = $block->getLayer();
     }
 
     public function __toString()
@@ -34,7 +36,7 @@ class Insert extends Entity
 
         return sprintf(
             $str,
-            $this->common['layer'],
+            $this->layer,
             $this->block,
             $this->data['point'][0],
             $this->data['point'][1],

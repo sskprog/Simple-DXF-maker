@@ -18,6 +18,10 @@ class Block extends Entity
     {
         return $this->data['name'];
     }
+    public function getLayer()
+    {
+        return $this->common['layer'];
+    }
 
     public function __toString()
     {

@@ -112,4 +112,4 @@ $draw->save('polyline');
 
 //Default charset is 'UTF-8'. If you want to use a different encoding then add
 //the second parameter to the method. For example:
-//$draw->save('polyline', 'Windows-1251);
+//$draw->save('polyline', 'Windows-1251');

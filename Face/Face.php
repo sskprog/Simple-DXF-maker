@@ -8,7 +8,7 @@ abstract class Face
     use Constructor;
     protected $common = [
         'name' => 'test',
-        'flag' => 64
+        'flag' => 0
     ];
     protected $data;
 

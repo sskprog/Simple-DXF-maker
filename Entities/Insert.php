@@ -24,11 +24,13 @@ class Insert extends Entity
     {
         $str =
                 '0' . PHP_EOL . 'INSERT' . PHP_EOL . '8' . PHP_EOL . '%s' . PHP_EOL .
-                '2' . PHP_EOL . '%s' . PHP_EOL . '10' . PHP_EOL . '%.2f' . PHP_EOL .
-                '20' . PHP_EOL . '%.2f' . PHP_EOL . '41' . PHP_EOL . '%.2f' . PHP_EOL .
-                '42' . PHP_EOL . '%.2f' . PHP_EOL . '50' . PHP_EOL . '%.2f' . PHP_EOL .
-                '70' . PHP_EOL . '%.2f' . PHP_EOL . '44' . PHP_EOL . '%.2f' . PHP_EOL .
-                '71' . PHP_EOL . '%.2f' . PHP_EOL . '45' . PHP_EOL . '%.2f' . PHP_EOL;
+                '2' . PHP_EOL . '%s' . PHP_EOL . 
+                $this->getOptionalProperties() .
+                '10' . PHP_EOL . '%.2f' . PHP_EOL .'20' . PHP_EOL . '%.2f' . PHP_EOL . 
+                '41' . PHP_EOL . '%.2f' . PHP_EOL .'42' . PHP_EOL . '%.2f' . PHP_EOL . 
+                '50' . PHP_EOL . '%.2f' . PHP_EOL .'70' . PHP_EOL . '%.2f' . PHP_EOL .
+                '44' . PHP_EOL . '%.2f' . PHP_EOL .'71' . PHP_EOL . '%.2f' . PHP_EOL . 
+                '45' . PHP_EOL . '%.2f' . PHP_EOL;
 
         return sprintf(
             $str,

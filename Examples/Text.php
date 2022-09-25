@@ -56,4 +56,4 @@ $draw->save('text');
 
 //Default charset is 'UTF-8'. If you want to use a different encoding then add
 //the second parameter to the method. For example:
-//$draw->save('text', 'Windows-1251);
+//$draw->save('text', 'Windows-1251');

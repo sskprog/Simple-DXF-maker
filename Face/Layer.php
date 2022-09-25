@@ -6,12 +6,14 @@ class Layer extends Face
     protected $data = [
         'color' => 7
     ];
-    protected $ltype;
+    protected $ltype = 'CONTINUOUS';
 
-    public function __construct(array $properties, Ltype $ltype)
+    public function __construct(array $properties, Ltype $ltype = null)
     {
         parent::__construct($properties);
-        $this->ltype = $ltype->getName();
+        if ($ltype) {
+            $this->ltype = $ltype->getName();
+        }
     }
 
     public function __toString()

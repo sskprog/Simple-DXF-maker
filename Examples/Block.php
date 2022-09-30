@@ -42,21 +42,21 @@ $draw->insertBlock(['point' => [0, 40], 'row' => [2, 7]], $block1);
 
 //You can use common properties like COLOR, LTYPE and LAYER
 //Using COLOR
-$block2 = new Block(['name' => 'block2', 'point' => [0,0]]);
+$block2 = new Block(['name' => 'block2', 'point' => [0, 0]]);
 //Default color value for ENTITY is BYLAYER. If you want to get BYBLOCK value,
 //set color value to 0.
 $block2->insertEntity(new Line(['points' => [[0, 0], [5, 10]], 'color' => 0]));
 $block2->insertEntity(new Line(['points' => [[0, 0], [10, 0]]]));
 $draw->addBlock($block2);
 //set the color value when inserting the block
-$draw->insertBlock(['point' => [0, 20], 'color' => 3], $block2);
+$draw->insertBlock(['point' => [0, 20], 'color' => 5], $block2);
 
 //Using LTYPE
 //create a new ltype
 $dashed = new Ltype(['name' => 'Dashed', 'desc' => 'Dashed line', 'length' => 10, 'dash' => [7, '-3']]);
 $draw->addLtype($dashed);
 //create a new block
-$block3 = new Block(['name' => 'block3', 'point' => [0,0]]);
+$block3 = new Block(['name' => 'block3', 'point' => [0, 0]]);
 $block3->insertEntity(new Line(['points' => [[0, 0], [50, 0]]]));
 //set special name BYBLOCK for the ltype of the entity
 $block3->insertEntity(new Line(['points' => [[0, 10], [50, 10]], 'ltype' => 'BYBLOCK']));
@@ -69,14 +69,11 @@ $draw->insertBlock(['point' => [0, 0], 'ltype' => 'Dashed'], $block3);
 $greenLayer = new Layer(['color' => 3, 'name' => 'greenLayer']);
 $draw->addLayer($greenLayer);
 //when creating a block, specify a layer
-$block4 = new Block(['name' => 'block4', 'point' => [0,0], 'layer' => 'greenLayer']);
+$block4 = new Block(['name' => 'block4', 'point' => [0, 0], 'layer' => 'greenLayer']);
 $block4->insertEntity(new Line(['points' => [[0, 0], [50, 0]]]));
 $block4->insertEntity(new Circle(['point' => [70, 0], 'r' => '10']));
 $draw->addBlock($block4);
 $draw->insertBlock(['point' => [0, '-10']], $block4);
-
-echo '<pre>';
-echo $draw;
 
 //Finally save the drawing. Add filename without extension as parameter
 $draw->save('block');
